@@ -61,6 +61,6 @@ var fight = function() {
     else {
         window.alert("You need to enter a valid option. Try again!"); 
     }
-}
+};
 // execute fight
 fight();
