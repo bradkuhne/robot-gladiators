@@ -133,42 +133,28 @@ var endGame = function() {
   };
 //shop function
 var shop = function() {
-        //ask a player what they'd like to do
-        var shopOptionPrompt = window.prompt(
-            "Would you like to REFILL your health, UPGRADE your attack, or LEAVE the store? Please enter one: 'refill', 'upgrade', or 'leave' to make a choice."
-        );
+    //ask a player what they'd like to do
+    var shopOptionPrompt = window.prompt(
+        "Would you like to REFILL your health, UPGRADE your attack, or LEAVE the store? Please enter one: '1' for refill, '2' for upgrade, or '3' to leave the store."
+    );
+    shopOptionPrompt = parseInt(shopOptionPrompt)
      // use switch to carry out action
     switch (shopOptionPrompt) {
-        case "refill":
-        case "REFILL":
-        playerInfo.refillHealth();
-        break;
-    
-        // increase health and decrease money
-        // playerInfo.health = playerInfo.health + 20;
-        // playerInfo.money = playerInfo.money - 7;
-        // break;
-        
-        case "upgrade":
-        case "UPGRADE":
-        playerInfo.upgradeAttack();
-        break;
-    
-        // increase attack and decrease money
-        // playerInfo.attack = playerInfo.attack + 6;
-        // playerInfo.money = playerInfo.money - 7;
-        // break;
-
-        case "leave":
-        case "LEAVE":
-        window.alert("Leaving the store.");
-    
-        // do nothing, so function will end
-        break;
+        case 1:
+            playerInfo.refillHealth();
+            break;
+       
+        case 2:
+            playerInfo.upgradeAttack();
+            break;
+   
+        case 3:
+            window.alert("Leaving the store.");
+            // do nothing, so function will end
+            break;
 
         default:
         window.alert("You did not pick a valid option. Try again.");
-    
         // call shop() again to force player to pick a valid option
         shop();
         break;
